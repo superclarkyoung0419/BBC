@@ -1,0 +1,5 @@
+<view class="container">
+    <view class="midimg" >
+        <image class='background' src="/images/shoufenmabg.png" mode="aspectFill"></image>
+    </view>
+</view>

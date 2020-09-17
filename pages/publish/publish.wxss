@@ -1,0 +1,38 @@
+page {
+    height: 100%;
+}
+
+.container {
+    background-color: #F5F3FA;
+    height: 100%;
+}
+
+.publish-content {
+    background-color: #ffffff;
+}
+
+.publish-content-1 {
+    margin-top: 10rpx;
+    background-color: #ffffff;
+}
+
+.publish-content-2 {
+    margin-top: 70rpx;
+    background-color: #F5F3FA;
+    width: 100%;
+}
+
+.textarea-content {
+    height: 400rpx;
+    width: 90%;
+    padding: 0 5%;
+    margin-top: 15rpx;
+}
+
+.publish-btn {
+    height: 88rpx;
+    width: 80%!important;
+    background-color: #00C481;
+    color: #FFFFFF;
+    line-height: 60rpx;
+}
