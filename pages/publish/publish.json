@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "i-input": "../../dist/input/index",
+        "i-panel": "../../dist/panel/index"
+    },
+    "navigationBarTitleText": "发布",
+    "navigationBarBackgroundColor": "#00c481",
+    "navigationBarTextStyle": "white"
+}

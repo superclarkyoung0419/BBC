@@ -1,0 +1,14 @@
+<view class="container">
+    <view class="publish-content">
+        <i-input title="需求标题" autofocus placeholder="请输入需求标题" />
+        <i-input type="number" title="需求积分" placeholder="请输入积分" />
+    </view>
+    <view class="publish-content-1">
+        <i-panel title="需求描述" >
+            <textarea class="textarea-content" />
+        </i-panel>
+    </view>
+    <view class="publish-content-2">
+        <button class="publish-btn">发布</button>
+    </view>
+</view>
