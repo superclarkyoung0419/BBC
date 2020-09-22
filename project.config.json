@@ -22,7 +22,7 @@
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
     "useMultiFrameRuntime": false,
-    "useApiHook": false,
+    "useApiHook": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -36,8 +36,8 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.12.2",
-  "appid": "wx464fa6eac5dc1f78",
-  "projectname": "wxApp",
+  "appid": "wxa9ff3a8a8c5b5d84",
+  "projectname": "bbc",
   "debugOptions": {
     "hidedInDevtools": []
   },

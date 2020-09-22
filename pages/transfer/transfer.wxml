@@ -1,0 +1,21 @@
+<view class="container bg-green">
+  <view class="transfer">
+    <view class="transfer-head"></view>
+    <view class="transfer-info">
+      <view class="reciever">
+        <image class="avatar" src="https://i.loli.net/2017/08/21/599a521472424.jpg"></image>
+        <text class="reciever-name">lucky</text>
+      </view>
+      <view class="bonus-form">
+        <text class="form-title">转积分</text>
+        <view class="bonus-input">
+          <text class="input-head">￥</text>
+          <input type="number" class="bonus-num" />
+        </view>
+        <text class="remark">备注</text>
+        <textarea class="remark-bonus" placeholder="请输入转积分的原因，以方便记录到对方历程。"></textarea>
+        <button class="confirm-button">确认</button>
+      </view>
+    </view>
+  </view>
+</view>

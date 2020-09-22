@@ -3,8 +3,10 @@
         "pages/index/index",
         "pages/logs/logs",
         "pages/publish/publish",
-        "pages/my/my",
-        "pages/getcoins/getcoins"
+        "pages/mine/mine",
+        "pages/getcoins/getcoins",
+        "pages/course/course",
+        "pages/transfer/transfer"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -32,7 +34,7 @@
                 "selectedIconPath": "/images/publish1.png"
             },
             {
-                "pagePath": "pages/my/my",
+                "pagePath": "pages/mine/mine",
                 "text": "我的",
                 "iconPath": "/images/my.png",
                 "selectedIconPath": "/images/my1.png"

@@ -1,0 +1,118 @@
+page {
+  height: 100%;
+}
+
+.course-head {
+  height: 208rpx;
+  padding: 60rpx 0 30rpx 60rpx;
+  color: #ffffff;
+  box-sizing: border-box;
+  line-height: 1;
+  color: #ffffff;
+  font-size: 48rpx;
+}
+
+.course-head .head-one {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 25rpx;
+
+}
+
+.course-head .head-two {
+  display: block;
+}
+
+
+.course-timeline {
+  background: #ffffff;
+  border-radius: 30rpx 30rpx 0rpx 0rpx;
+  padding: 7rpx 60rpx;
+}
+
+.timeline-year {}
+
+.timeline-year .hr-year {
+  display: block;
+  height: 22rpx;
+  font-size: 24rpx;
+  font-family: Arial Bold, Arial Bold-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #222222;
+  padding: 22rpx 0;
+  border-bottom: 1rpx solid #e1e1e1;
+}
+
+.timeline-month {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding-top: 56rpx;
+}
+
+.timeline-month .timeline-day {
+  width: 108rpx;
+}
+
+.timeline-day .day-day {
+  width: 33rpx;
+  height: 26rpx;
+  font-size: 36rpx;
+  font-family: Arial Bold, Arial Bold-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #222222;
+  margin-right: 10rpx;
+}
+
+.timeline-day .day-month {
+  width: 34rpx;
+  height: 21rpx;
+  font-size: 24rpx;
+  font-family: Arial Regular, Arial Regular-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #222222;
+}
+
+.timeline-month .timeline-bill {
+  flex: 1;
+}
+
+.timeline-bill .bill-item {
+  height: 110rpx;
+  background: #f1f1f1;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+  padding: 40rpx 30rpx;
+}
+
+.bill-item .bill-title {
+  height: 28rpx;
+  font-size: 28rpx;
+  font-family: Source Han Sans CN Medium, Source Han Sans CN Medium-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #222222;
+  line-height: 1;
+
+  line-height: 40rpx;
+}
+
+.bill-item .bill-bonus {
+
+  line-height: 40rpx;
+  font-size: 28rpx;
+  font-family: Arial Bold, Arial Bold-Bold;
+  font-weight: 700;
+  color: #00c481;
+  float: right;
+}
+
+.bill-item::after {
+  content: '';
+  display: inline;
+  clear: both;
+}

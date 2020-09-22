@@ -1,0 +1,167 @@
+/* mine.scss */
+
+
+page {
+  height: 100%;
+}
+
+/*------------- head -------------*/
+.mine-head {
+  padding: 30rpx 30rpx 110rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #00c481;
+  color: #fff;
+}
+
+.profile {
+  width: 50%;
+
+}
+
+.profile::after {
+  content: '';
+  display: inline;
+  clear: both;
+}
+
+.profile .avatar {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  float: left;
+}
+
+.profile .info {
+  padding-left: 124rpx;
+}
+
+.info .user-name {
+  font-size: 36rpx;
+  display: block;
+}
+
+.info .user-department {
+  font-size: 26rpx;
+  display: block;
+}
+
+.assets {
+  width: 50%;
+  text-align: right;
+}
+
+.assets .jf {
+  font-size: 26rpx;
+}
+
+.assets .bonus {
+  font-size: 80rpx;
+}
+
+
+/* ---------最近历程-------------- */
+
+.mine-course-list {
+  padding: 0 30rpx;
+
+}
+
+.mine-course-list .as-title {
+  background-color: transparent;
+  height: 66rpx;
+  line-height: 66rpx;
+  font-size: 26rpx;
+  color: #666666;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.mine-course-list .as-title .i-cell-ft,
+.mine-course-list .as-title .i-cell-ft::after {
+  color: #666666;
+}
+
+
+.mine-course-list .badge-list {
+  background-color: #fff;
+  padding: 30rpx 60rpx;
+  display: block;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 4rpx 20rpx 20rpx rgba(89, 145, 155, 0.1);
+
+}
+
+.badge-list .i-tags {
+  display: inline-block;
+  text-align: left;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  background: rgba(0, 196, 129, 0.06);
+  border: 1rpx solid #00c481;
+  border-radius: 28rpx;
+  font-size: 26rpx;
+  padding: 0 30rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  color: #00c481;
+  font-family: Source Han Sans CN Regular, Source Han Sans CN Regular-Regular;
+  font-weight: 400;
+}
+
+/* ---------积分商城-------- */
+.shop-list .as-title {
+  background-color: transparent;
+  height: 66rpx;
+  font-size: 26rpx;
+  color: #666666;
+}
+
+.shop-list-item {
+  padding: 0 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shop-list-item .list-item {
+  flex: 1;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 4rpx 20rpx 20rpx rgba(113, 176, 154, 0.2);
+  margin: 0 0 20rpx 0;
+  padding: 46rpx 30rpx 57rpx;
+}
+
+.shop-list-item .list-item:nth-child(2n+1) {
+  margin-right: 20rpx;
+}
+
+.list-item .specs-img {
+  width: 269rpx;
+  height: 175rpx;
+  display: inline-block;
+  margin: 0 auto 2rpx;
+}
+
+.list-item .specs {
+  display: block;
+  height: 24rpx;
+  font-size: 22rpx;
+  font-family: Source Han Sans CN Regular, Source Han Sans CN Regular-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #c1c1c1;
+  margin-bottom: 25rpx;
+}
+
+.list-item .consume {
+  display: block;
+  height: 26rpx;
+  font-size: 28rpx;
+  font-family: Source Han Sans CN Regular, Source Han Sans CN Regular-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #00c481;
+}
