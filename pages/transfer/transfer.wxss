@@ -73,14 +73,14 @@ page {
 
 .bonus-input .bonus-num {
   height: 116rpx;
-  width: 100%;
+
   border-bottom: 1rpx solid #e1e1e1;
   padding-left: 80rpx;
   margin-bottom: 60rpx;
 }
 
 .remark-bonus {
-  width: 100%;
+  width: auto;
   height: 212rpx;
   background: #f5f5f5;
   border-radius: 10rpx;

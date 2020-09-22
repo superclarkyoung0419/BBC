@@ -2,60 +2,37 @@
 <view class="container">
 	<view class="mine-head">
 		<view class="profile">
-			<image class="avatar" src="https://i.loli.net/2017/08/21/599a521472424.jpg"></image>
+			<image class="avatar" src="{{userInfo.avatar}}"></image>
 			<view class="info">
-				<text class="user-name">lucky</text>
-				<text class="user-department">开发一部</text>
+				<text class="user-name">{{userInfo.userName}}</text>
+				<text class="user-department">{{userInfo.department}}</text>
 			</view>
 		</view>
 		<view class="assets">
 			<text class="jf">积分：</text>
-			<text class="bonus">100</text>
+			<text class="bonus">{{userInfo.hasBonus}}</text>
 		</view>
 	</view>
-	<view class="mine-course-list">
+	<view class="mine-course-list" wx:if="{{courseList}}">
 		<i-cell-group>
 			<i-cell i-class="as-title" title="最近历程" is-link value="更多" url="/pages/course/course" only-tap-footer></i-cell>
 		</i-cell-group>
 
 		<view class="badge-list">
-			<i-tag i-class="i-tags" name="单个标签" color="green">
-				需要市场调研及商业计划书
-			</i-tag>
-			<i-tag i-class="i-tags" name="标签一" color="green">
-				标签一
-			</i-tag>
-			<i-tag i-class="i-tags" name="单个标签" color="green">
-				标签一
-			</i-tag>
-			<i-tag i-class="i-tags" name="标签一" color="green">
-				需要市场调研及商业计划书
+			<i-tag i-class="i-tags" name="单个标签" color="green" wx:for="{{courseList}}" wx:key="index" wx:if="title">
+				{{item.title}}
 			</i-tag>
 		</view>
 	</view>
 	<view class="shop-list">
 		<i-cell i-class="as-title" title="积分商城" is-link value="测试" url="/pages/transfer/transfer"></i-cell>
 		<view class="shop-list-item">
-			<view class="list-item">
-				<image class="specs-img" src="https://i.loli.net/2017/08/21/599a521472424.jpg"></image>
-				<text class="specs">Apple iMac 21.5英寸</text>
-				<text class="consume">2000积分</text>
+			<view class="list-item" wx:for="{{shopList}}" wx:key="index">
+				<image class="specs-img" src="{{item.gifImg}}"></image>
+				<text class="specs">{{item.gifTitle}}</text>
+				<text class="consume">{{item.gifBonus}}积分</text>
 			</view>
-			<view class="list-item">
-				<image class="specs-img" src="https://i.loli.net/2017/08/21/599a521472424.jpg"></image>
-				<text class="specs">Apple iMac 21.5英寸</text>
-				<text class="consume">2000积分</text>
-			</view>
-			<view class="list-item">
-				<image class="specs-img" src="https://i.loli.net/2017/08/21/599a521472424.jpg"></image>
-				<text class="specs">Apple iMac 21.5英寸</text>
-				<text class="consume">2000积分</text>
-			</view>
-			<view class="list-item">
-				<image class="specs-img" src="https://i.loli.net/2017/08/21/599a521472424.jpg"></image>
-				<text class="specs">Apple iMac 21.5英寸</text>
-				<text class="consume">2000积分</text>
-			</view>
+
 		</view>
 	</view>
 </view>

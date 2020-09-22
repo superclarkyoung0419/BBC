@@ -5,68 +5,20 @@
     <text class="head-two">见证一个个里程碑</text>
   </view>
   <view class="course-timeline">
-    <view class="timeline-year">
-      <text class="hr-year">2020年</text>
-      <view class="timeline-month">
+    <view class="timeline-year" wx:for="{{dateLine}}" wx:key="year" wx:for-item="item">
+      <text class="hr-year">{{item.year}}年</text>
+      <view class="timeline-month" wx:for="{{item.list}}" wx:key="date" wx:for-item="j">
         <view class="timeline-day">
-          <text class="day-day">9日</text><text class="day-month">9月</text>
+          <text class="day-day">{{j.day}}日</text><text class="day-month">{{j.month}}月</text>
         </view>
         <view class="timeline-bill">
           <view class="bill-item">
-            <text class="bill-title">需要市场调研及商业计划书</text>
-            <text class="bill-bonus">+15</text>
-          </view>
-          <view class="bill-item">
-            <text class="bill-title">需要市场调研及商业计划书</text>
-            <text class="bill-bonus">+15</text>
-          </view>
-          <view class="bill-item">
-            <text class="bill-title">需要市场调研及商业计划书</text>
-            <text class="bill-bonus">+15</text>
+            <text class="bill-title">{{j.title}}</text>
+            <text class="bill-bonus">+{{j.bouns}}</text>
           </view>
         </view>
       </view>
-      <view class="timeline-month">
-        <view class="timeline-day">
-          <text class="day-day">8日</text><text class="day-month">9月</text>
-        </view>
-        <view class="timeline-bill">
-          <view class="bill-item">
-            <text class="bill-title">需要市场调研及商业计划书</text>
-            <text class="bill-bonus">+15</text>
-          </view>
-          <view class="bill-item">
-            <text class="bill-title">需要市场调研及商业计划书</text>
-            <text class="bill-bonus">+15</text>
-          </view>
-          <view class="bill-item">
-            <text class="bill-title">需要市场调研及商业计划书</text>
-            <text class="bill-bonus">+15</text>
-          </view>
-        </view>
-      </view>
-    </view>
-    <view class="timeline-year">
-      <text class="hr-year">2019年</text>
-      <view class="timeline-month">
-        <view class="timeline-day">
-          <text class="day-day">8日</text><text class="day-month">9月</text>
-        </view>
-        <view class="timeline-bill">
-          <view class="bill-item">
-            <text class="bill-title">需要市场调研及商业计划书</text>
-            <text class="bill-bonus">+15</text>
-          </view>
-          <view class="bill-item">
-            <text class="bill-title">需要市场调研及商业计划书</text>
-            <text class="bill-bonus">+15</text>
-          </view>
-          <view class="bill-item">
-            <text class="bill-title">需要市场调研及商业计划书</text>
-            <text class="bill-bonus">+15</text>
-          </view>
-        </view>
-      </view>
+
     </view>
   </view>
 </view>

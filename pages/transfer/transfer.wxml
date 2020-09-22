@@ -14,7 +14,7 @@
         </view>
         <text class="remark">备注</text>
         <textarea class="remark-bonus" placeholder="请输入转积分的原因，以方便记录到对方历程。"></textarea>
-        <button class="confirm-button">确认</button>
+        <button type="button" class="confirm-button" bindtap="submitForm">确认</button>
       </view>
     </view>
   </view>
