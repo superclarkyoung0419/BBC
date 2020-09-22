@@ -30,7 +30,7 @@ Page({
         item.month = new Date(item.date).getMonth() + 1;
         item.day = new Date(item.date).getDay();
       }
-      if (!dateObj.hasOwnProperty(item.year)) {
+      if (!dateObj.hasOwnProperty(item.year) && item.year) {
         dateObj[item.year] = [];
       }
       dateObj[item.year].push(item);
@@ -58,11 +58,11 @@ Page({
         month = Math.round(Math.random() * 11) + 1,
         day = (month === 2) ? Math.round(Math.random() * 28) : Math.round(Math.random() * 30),
         timestamp = new Date(year + '-' + month + '-' + day + " 00:00:00").getTime(),
-        titleStr = '需要市场调研及商业计划书';
+        titleStr = '需要市场调研及商业计划书需要市场调研及商业计划书';
       console.log(year + '-' + month + '-' + day);
       timeList.push({
         date: timestamp,
-        title: titleStr.slice(0, Math.round(Math.random() * 12)),
+        title: titleStr.slice(0, Math.round(Math.random() * 24)),
         bouns: Math.round(Math.random() * 50)
       })
     }

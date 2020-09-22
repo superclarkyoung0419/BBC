@@ -29,6 +29,9 @@ page {
   display: block;
 }
 
+.head-two .strong {
+  font-weight: 700;
+}
 
 .course-timeline {
   background: #ffffff;
@@ -85,37 +88,39 @@ page {
 
 .timeline-month .timeline-bill {
   flex: 1;
+  max-width: 523rpx;
 }
 
 .timeline-bill .bill-item {
-  height: 110rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
   background: #f1f1f1;
   border-radius: 20rpx;
   margin-bottom: 20rpx;
-  box-sizing: border-box;
   padding: 40rpx 30rpx;
 }
 
 .bill-item .bill-title {
-  height: 28rpx;
+  flex: 1;
   font-size: 28rpx;
   font-family: Source Han Sans CN Medium, Source Han Sans CN Medium-Medium;
   font-weight: 500;
   text-align: left;
   color: #222222;
-  line-height: 1;
-
-  line-height: 40rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .bill-item .bill-bonus {
 
-  line-height: 40rpx;
+  line-height: 1;
   font-size: 28rpx;
   font-family: Arial Bold, Arial Bold-Bold;
   font-weight: 700;
   color: #00c481;
-  float: right;
 }
 
 .bill-item::after {

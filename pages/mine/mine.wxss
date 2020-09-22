@@ -5,6 +5,10 @@ page {
   height: 100%;
 }
 
+.container {
+  height: auto;
+}
+
 /*------------- head -------------*/
 .mine-head {
   padding: 30rpx 30rpx 110rpx 30rpx;
@@ -16,7 +20,8 @@ page {
 }
 
 .profile {
-  width: 50%;
+  flex: 1;
+  vertical-align: bottom;
 
 }
 
@@ -31,10 +36,14 @@ page {
   height: 88rpx;
   border-radius: 50%;
   float: left;
+
+  margin-top: 10rpx;
 }
 
 .profile .info {
   padding-left: 124rpx;
+  box-sizing: border-box;
+  padding-top: 17rpx;
 }
 
 .info .user-name {
@@ -48,8 +57,9 @@ page {
 }
 
 .assets {
-  width: 50%;
+  flex: 1;
   text-align: right;
+  vertical-align: bottom;
 }
 
 .assets .jf {
@@ -122,15 +132,17 @@ page {
   padding: 0 30rpx;
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 .shop-list-item .list-item {
   flex: 1;
+  max-width: 335rpx;
   box-sizing: border-box;
   background: #ffffff;
   border-radius: 10rpx;
   box-shadow: 0rpx 4rpx 20rpx 20rpx rgba(113, 176, 154, 0.2);
-  margin: 0 0 20rpx 0;
+  margin-bottom: 20rpx;
   padding: 46rpx 30rpx 57rpx;
 }
 
@@ -141,7 +153,7 @@ page {
 .list-item .specs-img {
   width: 269rpx;
   height: 175rpx;
-  display: inline-block;
+  display: block;
   margin: 0 auto 2rpx;
 }
 
