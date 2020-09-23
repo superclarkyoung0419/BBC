@@ -15,6 +15,11 @@ Page({
 
     const timelineData = this.groupDate(timelineList);
     console.log(timelineData);
+    for (let i = 0; i < timelineData.length; i++) {
+      if (timelineData.list && timelineData.list.length > 0) {
+        timelineData.list.sort((itema, itemb) => itemb.date - itema.date)
+      }
+    }
     this.setData({
       dateLine: timelineData
     })
@@ -56,7 +61,7 @@ Page({
     for (let i = 0; i < Math.round(Math.random() * 30); i++) {
       let year = yearList[Math.round(Math.random() * 3)],
         month = Math.round(Math.random() * 11) + 1,
-        day = (month === 2) ? Math.round(Math.random() * 28) : Math.round(Math.random() * 30),
+        day = (month === 2) ? Math.round(Math.random() * 28 + 1) : Math.round(Math.random() * 30 + 1),
         timestamp = new Date(year + '-' + month + '-' + day + " 00:00:00").getTime(),
         titleStr = '需要市场调研及商业计划书需要市场调研及商业计划书';
       console.log(year + '-' + month + '-' + day);
