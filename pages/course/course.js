@@ -14,12 +14,7 @@ Page({
     timelineList.sort((itema, itemb) => itemb.date - itema.date);
 
     const timelineData = this.groupDate(timelineList);
-    console.log(timelineData);
-    for (let i = 0; i < timelineData.length; i++) {
-      if (timelineData.list && timelineData.list.length > 0) {
-        timelineData.list.sort((itema, itemb) => itemb.date - itema.date)
-      }
-    }
+
     this.setData({
       dateLine: timelineData
     })
@@ -33,7 +28,7 @@ Page({
       if (item.date) {
         item.year = new Date(item.date).getFullYear();
         item.month = new Date(item.date).getMonth() + 1;
-        item.day = new Date(item.date).getDay();
+        item.day = new Date(item.date).getDate();
       }
       if (!dateObj.hasOwnProperty(item.year) && item.year) {
         dateObj[item.year] = [];
@@ -48,6 +43,8 @@ Page({
       })
     }
     newDateArr.sort((na, nb) => nb.year - na.year);
+
+
     return newDateArr;
 
   },
@@ -61,13 +58,13 @@ Page({
     for (let i = 0; i < Math.round(Math.random() * 30); i++) {
       let year = yearList[Math.round(Math.random() * 3)],
         month = Math.round(Math.random() * 11) + 1,
-        day = (month === 2) ? Math.round(Math.random() * 28 + 1) : Math.round(Math.random() * 30 + 1),
+        day = (month === 2) ? Math.round(Math.random() * 28) + 1 : Math.round(Math.random() * 30) + 1,
         timestamp = new Date(year + '-' + month + '-' + day + " 00:00:00").getTime(),
         titleStr = '需要市场调研及商业计划书需要市场调研及商业计划书';
       console.log(year + '-' + month + '-' + day);
       timeList.push({
         date: timestamp,
-        title: titleStr.slice(0, Math.round(Math.random() * 24)),
+        title: titleStr.slice(0, Math.round(Math.random() * 20) + 4),
         bouns: Math.round(Math.random() * 50)
       })
     }
