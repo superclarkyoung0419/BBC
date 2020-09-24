@@ -28,7 +28,8 @@ Page({
       if (item.date) {
         item.year = new Date(item.date).getFullYear();
         item.month = new Date(item.date).getMonth() + 1;
-        item.day = new Date(item.date).getDate();
+        let day = new Date(item.date).getDate();
+        item.day = day >= 10 ? day : '0' + day;
       }
       if (!dateObj.hasOwnProperty(item.year) && item.year) {
         dateObj[item.year] = [];

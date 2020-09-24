@@ -40,7 +40,6 @@ page {
   flex: 1;
 }
 
-.timeline-year {}
 
 .timeline-year .hr-year {
   display: block;
@@ -58,6 +57,7 @@ page {
   display: flex;
   flex-direction: row;
   align-items: stretch;
+  justify-content: space-between;
   padding-top: 56rpx;
 }
 
@@ -66,8 +66,7 @@ page {
 }
 
 .timeline-day .day-day {
-  width: 33rpx;
-  height: 26rpx;
+
   font-size: 36rpx;
   font-family: Arial Bold, Arial Bold-Bold;
   font-weight: 700;
@@ -77,8 +76,7 @@ page {
 }
 
 .timeline-day .day-month {
-  width: 34rpx;
-  height: 21rpx;
+
   font-size: 24rpx;
   font-family: Arial Regular, Arial Regular-Regular;
   font-weight: 400;

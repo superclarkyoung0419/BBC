@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/getwxuser/getwxuser",
         "pages/index/index",
         "pages/logs/logs",
         "pages/publish/publish",
@@ -41,5 +42,8 @@
             }
         ]
     },
-    "usingComponents": {}
+    "usingComponents": {},
+    "useExtendedLib": {
+        "weui": true
+    }
 }
