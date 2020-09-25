@@ -8,29 +8,54 @@ Page({
         canIUse: wx.canIUse('button.open-type.getUserInfo')
     },
     //事件处理函数
-    bindViewTap: function () {
+    bindViewTap: function() {
         wx.navigateTo({
             url: '../logs/logs'
         })
     },
-    onLoad: function () {
-        console.log('111111',app.globalData);
-
-        ajax.myRequest({
-            url: '/login',
-            data: {
-                "uuid": "asjdngdnafasdf",
-                "wx_name": "roy",
-                "wx_image": "http://baidu.com"
-            },
-            method: 'POST',
-            success: res => {
-                console.log(res, '成功')
-            },
-            fail: err => {
-                console.error(err);
+    onLoad: function() {
+        wx.getStorage({
+            key: 'code',
+            success(res) {
+                debugger
+                wx.request({
+                    url: 'https://www.cfetsit-bbc.top/login', //仅为示例，并非真实的接口地址
+                    data: {
+                        "js_code": res.data,
+                        "wx_name": "roy",
+                        "wx_image": "http://baidu.com"
+                    },
+                    method: 'POST',
+                    header: {
+                        'content-type': 'application/json' // 默认值
+                    },
+                    success: function(res) {
+                        console.log(res.data)
+                    },
+                    fail: res => {
+                        console.log(res)
+                    }
+                })
             }
         })
+
+        // ajax.myRequest({
+        //     url: '/login',
+        //     data: {
+        //         "uuid": '021jLwGa1YS6Fz0mvDFa1p8Okt2jLwGd',
+        //         "wx_name": "roy",
+        //         "wx_image": "http://baidu.com"
+        //     },
+        //     method: 'POST',
+        //     success: res => {
+        //         console.log(res, '成功')
+        //     },
+        //     fail: err => {
+        //         console.error(err);
+        //     }
+        // })
+
+
 
         if (app.globalData.userInfo) {
 
@@ -60,7 +85,7 @@ Page({
             })
         }
     },
-    getUserInfo: function (e) {
+    getUserInfo: function(e) {
         console.log(e)
 
         app.globalData.userInfo = e.detail.userInfo
