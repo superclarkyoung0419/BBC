@@ -1,0 +1,5 @@
+<view class="container">
+    <button class="getBtn" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+        获取您的用户信息
+    </button>
+</view>
