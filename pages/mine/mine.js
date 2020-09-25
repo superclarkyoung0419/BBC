@@ -1,3 +1,4 @@
+const app = getApp();
 const ajax = require('../../utils/fetch');
 Page({
   data: {
@@ -19,23 +20,56 @@ Page({
   },
   // 获取用户信息
   getUserInfo() {
-    const user = this.mockUserData();
-    this.setData({
-      userInfo: user
-    })
+
+    this.getWallet();
+
   },
   // 获取历程列表
   getCourseList() {
-    const courseList = this.mockCourseData();
-    this.setData({
-      courseList: courseList
-    })
+    this.getCourse();
   },
   // 获取积分商城列表
   getShopList() {
     const shopList = this.mockShopListData();
     this.setData({
       shopList: shopList
+    })
+  },
+
+  //------------- request
+
+  // 获取个人钱包数据
+  getWallet() {
+    ajax.myRequest({
+      url: "/my_wallet",
+      data: {
+        uuid: "afasdfasdfasdf"
+      },
+      success: (res) => {
+        if (res.hasOwnProperty("wallet")) {
+          const user = app.globalData.userInfo;
+          let userInfo = {
+            ...user,
+            bonus: res.wallet
+          };
+          this.setData({
+            userInfo: userInfo
+          })
+        }
+      }
+    })
+  },
+
+  // 获取历程数据
+  getCourse() {
+    ajax.myRequest({
+      url: '/my_log',
+      data: {
+        uuid: "afasdfasdfasdf"
+      },
+      success: (res) => {
+        console.log('getCourse', res)
+      }
     })
   },
 
@@ -66,7 +100,7 @@ Page({
     const gifArr = [];
     for (let i = 0; i < Math.round(Math.random() * 15) + 1; i++) {
       gifArr.push({
-        gifImg: "https://i.loli.net/2017/08/21/599a521472424.jpg",
+        gifImg: "../../images/shop-item.png",
         gifTitle: `Apple iMac ${(Math.random()*50).toFixed(1)}英寸`,
         gifBonus: Math.round(Math.random() * 10000)
       })

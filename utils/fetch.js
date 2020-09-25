@@ -53,7 +53,12 @@ const myRequest = options => {
       options.success = function (res) {
         // 判断不同的返回码 200/404
         if (res.statusCode === 200) {
-
+          try {
+            console.log('ajax', res);
+            successCallback(res.data)
+          } catch (e) {
+            console.error(options.url + ':' + e)
+          };
         } else if (res.statusCode === 404) {
           console.log('404');
         }

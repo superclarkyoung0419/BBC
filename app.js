@@ -1,6 +1,10 @@
 //app.js
 App({
-    onLaunch: function() {
+    globalData: {
+        userInfo: null,
+        code: '',
+    },
+    onLaunch: function () {
         // 展示本地存储能力
         var logs = wx.getStorageSync('logs') || []
         logs.unshift(Date.now())
@@ -8,11 +12,12 @@ App({
 
         // 登录
         wx.login({
-                success: res => {
-                    // 发送 res.code 到后台换取 openId, sessionKey, unionId
-                }
-            })
-            // 获取用户信息
+            success: res => {
+                this.globalData.code = res.code;
+                // 发送 res.code 到后台换取 openId, sessionKey, unionId
+            }
+        })
+        // 获取用户信息
         wx.getSetting({
             success: res => {
                 if (res.authSetting['scope.userInfo']) {
@@ -33,7 +38,5 @@ App({
             }
         })
     },
-    globalData: {
-        userInfo: null
-    }
+
 })

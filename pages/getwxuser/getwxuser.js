@@ -14,6 +14,7 @@ Page({
         })
     },
     onLoad: function () {
+        console.log('111111',app.globalData);
 
         ajax.myRequest({
             url: '/login',

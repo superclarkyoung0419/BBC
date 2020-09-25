@@ -2,15 +2,15 @@
 <view class="container">
 	<view class="mine-head">
 		<view class="profile">
-			<image class="avatar" src="{{userInfo.avatar}}"></image>
+			<image class="avatar" src="{{userInfo.avatarUrl}}"></image>
 			<view class="info">
-				<text class="user-name">{{userInfo.userName}}</text>
-				<text class="user-department">{{userInfo.department}}</text>
+				<text class="user-name">{{userInfo.nickName}}</text>
+				<text class="user-department" wx:if="userInfo.department">{{userInfo.department}}</text>
 			</view>
 		</view>
 		<view class="assets">
 			<text class="jf">积分：</text>
-			<text class="bonus">{{userInfo.hasBonus}}</text>
+			<text class="bonus">{{userInfo.bonus}}</text>
 		</view>
 	</view>
 	<view class="mine-course-list" wx:if="{{courseList}}">

@@ -1,3 +1,4 @@
+const ajax = require('../../utils/fetch');
 Page({
   data: {
     dateLine: []
@@ -9,15 +10,7 @@ Page({
     this.getTimeLineData();
   },
   getTimeLineData() {
-    const timelineList = this.mockTimeLineData();
-
-    timelineList.sort((itema, itemb) => itemb.date - itema.date);
-
-    const timelineData = this.groupDate(timelineList);
-
-    this.setData({
-      dateLine: timelineData
-    })
+    this.getCourse();
   },
 
   groupDate(dateArr) {
@@ -48,6 +41,20 @@ Page({
 
     return newDateArr;
 
+  },
+
+
+  // -------------------request
+  getCourse() {
+    ajax.myRequest({
+      url: "/my_log",
+      data: {
+        uuid: "asfasafs"
+      },
+      success: (res) => {
+        console.log('getCourse', res);
+      }
+    })
   },
 
   //-----------mock data-----------
