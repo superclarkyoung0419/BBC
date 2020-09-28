@@ -1,32 +1,37 @@
 const app = getApp();
-const ajax = require('../../utils/fetch');
+const api = require('../../utils/fetch');
 Page({
   data: {
     userInfo: {},
     courseList: [],
-    shopList: []
+    shopList: [],
+    uuid: null,
   },
   // 载入时执行
   onLoad: function () {
-    console.log('loading');
-
-    this.initData();
+    const globalData = app.globalData;
+    this.setData({
+      uuid: globalData.openid
+    });
+    this.initData(globalData.openid);
+  },
+  onShow(){
+    this.onLoad();
   },
   //初始化数据
-  initData() {
-    this.getUserInfo();
-    this.getCourseList();
+  initData(id) {
+    this.getUserInfo(id);
+    this.getCourseList(id);
     this.getShopList();
   },
   // 获取用户信息
-  getUserInfo() {
+  getUserInfo(id) {
 
-    this.getWallet();
-
+    this.getWallet(id);
   },
   // 获取历程列表
-  getCourseList() {
-    this.getCourse();
+  getCourseList(id) {
+    this.getCourse(id);
   },
   // 获取积分商城列表
   getShopList() {
@@ -39,19 +44,25 @@ Page({
   //------------- request
 
   // 获取个人钱包数据
-  getWallet() {
-    ajax.myRequest({
-      url: "/my_wallet",
+  getWallet(uuid) {
+    api.request({
+      url: "wallet",
       data: {
-        uuid: "afasdfasdfasdf"
+        uuid: uuid
       },
       success: (res) => {
         if (res.hasOwnProperty("wallet")) {
           const user = app.globalData.userInfo;
+
           let userInfo = {
             ...user,
             bonus: res.wallet
           };
+          if (res.user_hash) {
+            userInfo.user_hash = res.user_hash.slice(0, 3) + '*****' + res.user_hash.slice(res.user_hash.length - 3, res.user_hash.length)
+          } else {
+            userInfo.user_hash = null;
+          }
           this.setData({
             userInfo: userInfo
           })
@@ -61,41 +72,31 @@ Page({
   },
 
   // 获取历程数据
-  getCourse() {
-    ajax.myRequest({
-      url: '/my_log',
+  getCourse(uuid) {
+    api.request({
+      url: 'course',
       data: {
-        uuid: "afasdfasdfasdf"
+        uuid: uuid
       },
       success: (res) => {
-        console.log('getCourse', res)
+        if (res && res.length > 0) {
+          let courseArr = [];
+          res.forEach(item => {
+            courseArr.push({
+              title: item.comment
+            })
+          })
+          this.setData({
+            courseList: courseArr
+          })
+        }
       }
     })
   },
 
 
   //------------mock data----------------
-  mockUserData() {
-    const user = {
-      userName: 'lucky',
-      hasBonus: Math.round(Math.random() * 1000),
-      department: `开发${Math.round(Math.random()*5)}组`,
-      avatar: "https://i.loli.net/2017/08/21/599a521472424.jpg"
-    };
-    return user;
-  },
 
-  mockCourseData() {
-    const textStr = "需要市场调研及商业计划书";
-    const textArr = [];
-    for (let i = 0; i < Math.round(Math.random() * 10); i++) {
-      textArr.push({
-        title: textStr.slice(0, parseInt(Math.random() * 12) + 4),
-        time: new Date()
-      })
-    }
-    return textArr;
-  },
   mockShopListData() {
     const gifArr = [];
     for (let i = 0; i < Math.round(Math.random() * 15) + 1; i++) {

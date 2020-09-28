@@ -56,71 +56,102 @@ page {
 
 .list-contrl {
     overflow: auto;
+    padding: 10rpx 30rpx;
+}
+
+.complete .weui-slideview__btn {
+    background-color: #00c481;
+    color: #fff;
 }
 
 .list-items {
     height: 300rpx;
-    border-radius: 15px;
-    padding: 20rpx 30rpx;
-    margin: 20rpx 40rpx;
+    padding: 40rpx 30rpx 25rpx;
+    margin-bottom: 20rpx;
     background-color: #fff;
-    position: relative;
-    box-shadow: 0px 4px 3px rgba(53, 186, 110, 0.2);
-    border-top: 1rpx solid rgba(53, 186, 110, 0.3);
+
+    border-radius: 20rpx;
+    box-shadow: 0rpx 4rpx 20rpx 20rpx rgba(150, 223, 198, 0.2);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.list-item {
+    flex: 1;
+    overflow: hidden;
+    white-space: pre-wrap;
+}
+
+.item-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-info {
+    flex: 1;
 }
 
 .integral {
-    position: absolute;
-    top: 18rpx;
-    right: 28rpx;
-    color: #35BA6E;
-    font-size: large;
-    font-weight: 550;
+    width: 150rpx;
+
+    font-size: 32rpx;
+    font-family: Arial Bold, Arial Bold-Bold;
+    font-weight: 700;
+    color: #00c481;
 }
 
 .list-item-title {
-    font-size: large;
-    width: 70%;
+    font-size: 32rpx;
+
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     display: inline-block;
+    font-size: 32rpx;
+    font-family: Source Han Sans CN Medium, Source Han Sans CN Medium-Medium;
+    font-weight: 500;
+    color: #222222;
 }
 
 .list-item-content {
-    font-size: medium;
-    color: #ccc;
-    width: 70%;
-    display: inline-block;
+
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    display: block;
+    font-size: 26rpx;
+    font-family: Source Han Sans CN Regular, Source Han Sans CN Regular-Regular;
+    font-weight: 400;
+    color: #999999;
 }
 
 .user-contrl {
-    position: absolute;
-    height: 80rpx;
-    bottom: 20rpx;
-    background-color: #fff;
-    line-height: 80rpx;
+    height: 56rpx;
 }
 
 .user-img {
-    width: 70rpx;
-    height: 70rpx;
+    width: 56rpx;
+    height: 56rpx;
+    background: #e1e1e1;
     display: inline-block;
-    margin-right: 30rpx;
+    margin-right: 20rpx;
     border-radius: 50%;
     vertical-align: middle;
 }
 
 .user-name {
-    vertical-align: middle;
+
+    font-size: 28rpx;
+    font-family: Source Han Sans CN Regular, Source Han Sans CN Regular-Regular;
+    font-weight: 400;
+    color: #222222;
 }
 
 .list-more {
     text-align: center;
     margin: 40rpx;
+    color: #999999;
 }
 
 .scrolltext {

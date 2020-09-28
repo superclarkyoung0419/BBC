@@ -13,8 +13,8 @@ page {
 }
 
 .midimg {
-    width: 658rpx;
-    height: 791rpx;
+    width: 660rpx;
+    height: 790rpx;
     position: relative;
     z-index: 99;
 }
@@ -25,4 +25,9 @@ page {
     position: absolute;
     background-size: 100% 100%;
     z-index: -1;
+}
+
+.canvas {
+    margin-left: 165rpx;
+    margin-top: 235rpx;
 }

@@ -26,58 +26,28 @@
       <text class="scrolltext">刷新列表</text>
     </view> -->
     <view class="list-contrl">
-      <view class="list-items">
-        <span class="list-item-title">需要市场调研及商业计划书</span>
-        <span class="list-item-content">1.jaLDjlkaALSJALSsahjkldahsfSHADL</span>
-        <span class="list-item-content">2.ajkldshdHSLJKDdlHDJKALshdjklHjsldKHSj</span>
-        <view class="user-contrl">
-          <image class="user-img" src="https://www.baidu.com/img/flexible/logo/pc/result.png"></image>
-          <span class="user-name">nihounamedashe</span>
+      <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slideButtonTap" wx:for="{{taskList}}" wx:key="task_id"
+        data-taskid="{{item.task_id}}">
+        <view class="list-items">
+          <view class="list-item">
+            <view class="item-content">
+              <view class="content-info">
+                <span class="list-item-title">{{item.title}}</span>
+                <span class="list-item-content">{{item.description}}</span>
+              </view>
+              <view class="user-contrl">
+                <image class="user-img" src="{{item.avatar}}"></image>
+                <span class="user-name">{{item.name}}</span>
+                <text class="list-more">{{item.user_hash}}</text>
+              </view>
+            </view>
+          </view>
+          <text class="integral">{{item.bonus}}积分</text>
         </view>
-        <span class="integral">15积分</span>
-      </view>
-      <!--  -->
-      <view class="list-items">
-        <span class="list-item-title">需要市场调研及商业计划书</span>
-        <span class="list-item-content">1.jaLDjlkaALSJALSsahjkldahsfSHADL</span>
-        <span class="list-item-content">2.ajkldshdHSLJKDdlHDJKALshdjklHjsldKHSj</span>
-        <view class="user-contrl">
-          <image class="user-img" src="https://www.baidu.com/img/flexible/logo/pc/result.png"></image>
-          <span class="user-name">nihounamedashe</span>
-        </view>
-        <span class="integral">15积分</span>
-      </view>
-      <view class="list-items">
-        <span class="list-item-title">需要市场调研及商业计划书</span>
-        <span class="list-item-content">1.jaLDjlkaALSJALSsahjkldahsfSHADL</span>
-        <span class="list-item-content">2.ajkldshdHSLJKDdlHDJKALshdjklHjsldKHSj</span>
-        <view class="user-contrl">
-          <image class="user-img" src="https://www.baidu.com/img/flexible/logo/pc/result.png"></image>
-          <span class="user-name">nihounamedashe</span>
-        </view>
-        <span class="integral">15积分</span>
-      </view>
-      <view class="list-items">
-        <span class="list-item-title">需要市场调研及商业计划书</span>
-        <span class="list-item-content">1.jaLDjlkaALSJALSsahjkldahsfSHADL</span>
-        <span class="list-item-content">2.ajkldshdHSLJKDdlHDJKALshdjklHjsldKHSj</span>
-        <view class="user-contrl">
-          <image class="user-img" src="https://www.baidu.com/img/flexible/logo/pc/result.png"></image>
-          <span class="user-name">nihounamedashe</span>
-        </view>
-        <span class="integral">15积分</span>
-      </view>
-      <view class="list-items">
-        <span class="list-item-title">需要市场调研及商业计划书</span>
-        <span class="list-item-content">1.jaLDjlkaALSJALSsahjkldahsfSHADL</span>
-        <span class="list-item-content">2.ajkldshdHSLJKDdlHDJKALshdjklHjsldKHSj</span>
-        <view class="user-contrl">
-          <image class="user-img" src="https://www.baidu.com/img/flexible/logo/pc/result.png"></image>
-          <span class="user-name">nihounamedashe</span>
-        </view>
-        <span class="integral">15积分</span>
-      </view>
+      </mp-slideview>
     </view>
+    <!--  -->
+
     <!-- <view class="list-more">
       <text class="scrolltext bottomtext">已经到底啦</text>
     </view> -->

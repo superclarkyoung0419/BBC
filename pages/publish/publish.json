@@ -1,7 +1,7 @@
 {
     "usingComponents": {
-        "i-input": "../../dist/input/index",
-        "i-panel": "../../dist/panel/index"
+        "mp-cells": "weui-miniprogram/cells/cells",
+        "mp-cell": "weui-miniprogram/cell/cell"
     },
     "navigationBarTitleText": "发布",
     "navigationBarBackgroundColor": "#00c481",

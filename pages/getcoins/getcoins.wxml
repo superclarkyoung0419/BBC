@@ -1,5 +1,7 @@
 <view class="container">
-    <view class="midimg" >
+    <view class="midimg">
         <image class='background' src="/images/shoufenmabg.png" mode="aspectFill"></image>
+        <canvas class='canvas' style="width:{{qrcodeWidth}}px; height:{{qrcodeWidth}}px;" canvas-id='canvas'
+            bindlongtap='save'></canvas>
     </view>
 </view>

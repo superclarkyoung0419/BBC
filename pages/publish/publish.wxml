@@ -1,14 +1,25 @@
 <view class="container">
-    <view class="publish-content">
-        <i-input title="需求标题" autofocus placeholder="请输入需求标题" />
-        <i-input type="number" title="需求积分" placeholder="请输入积分" />
+    <view>
+        <mp-cells ext-class=" no-margin-top mgb-20">
+            <mp-cell title="需求标题：" ext-class="publish-cell">
+                <input type="text" bindinput="getTitle" value="{{form.title}}" class="text-right publish-title"
+                    placeholder="请输入需求标题" />
+            </mp-cell>
+            <mp-cell title="需求积分：" ext-class="publish-cell">
+                <input type="number" value="{{form.bonus}}" bindinput="getBonus" class="text-right publish-bonus"
+                    placeholder="请输入积分" />
+            </mp-cell>
+        </mp-cells>
     </view>
-    <view class="publish-content-1">
-        <i-panel title="需求描述" >
-            <textarea class="textarea-content" />
-        </i-panel>
+    <view class="publish-desc">
+        <view class="publish-desc_title">需求描述</view>
+        <view class="publish-desc_content">
+            <view class="weui-cell__bd">
+                <textarea type="text" class="weui-textarea" value="{{form.description}}" bindinput="getDesc"></textarea>
+            </view>
+        </view>
     </view>
     <view class="publish-content-2">
-        <button class="publish-btn">发布</button>
+        <button bindtap="publish" class="publish-btn">发布</button>
     </view>
 </view>

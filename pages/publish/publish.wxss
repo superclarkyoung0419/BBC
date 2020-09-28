@@ -31,8 +31,73 @@ page {
 
 .publish-btn {
     height: 88rpx;
-    width: 80%!important;
+    width: 80% !important;
     background-color: #00C481;
     color: #FFFFFF;
     line-height: 60rpx;
+}
+
+.no-margin-top {
+    margin-top: 0;
+}
+
+.no-margin-top .weui-cells {
+    margin-top: 0;
+}
+
+.mgb-20 {
+    margin-bottom: 20rpx;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.publish-bonus {
+    font-size: 32rpx;
+    font-family: Arial Regular, Arial Regular-Regular;
+    font-weight: 400;
+    color: #00c481;
+}
+
+.publish-title {
+
+    font-size: 32rpx;
+    font-family: Source Han Sans CN Regular, Source Han Sans CN Regular-Regular;
+    font-weight: 400;
+    color: #222222;
+}
+
+.publish-cell {
+    font-size: 32rpx;
+    font-family: Source Han Sans CN Regular, Source Han Sans CN Regular-Regular;
+    font-weight: 400;
+    text-align: left;
+    color: #666666;
+}
+
+.publish-cell.weui-cell {
+    padding-left: 40rpx;
+    padding-right: 40rpx;
+}
+
+.publish-desc {
+    background: #fff;
+    padding: 30rpx 40rpx 50rpx;
+}
+
+.publish-desc_title {
+
+    font-size: 32rpx;
+    font-family: Source Han Sans CN Regular, Source Han Sans CN Regular-Regular;
+    font-weight: 400;
+    color: #666666;
+}
+
+.publish-desc_content {
+
+    font-size: 28rpx;
+    font-family: Source Han Sans CN Regular, Source Han Sans CN Regular-Regular;
+    font-weight: 400;
+    color: #666666;
 }

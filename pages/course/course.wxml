@@ -7,14 +7,17 @@
   <view class="course-timeline">
     <view class="timeline-year" wx:for="{{dateLine}}" wx:key="year" wx:for-item="item">
       <text class="hr-year">{{item.year}}年</text>
-      <view class="timeline-month" wx:for="{{item.list}}" wx:key="date" wx:for-item="j">
+      <view class="timeline-month" wx:for="{{item.list}}" wx:key="index" wx:for-item="j">
         <view class="timeline-day">
           <text class="day-day">{{j.day}}</text><text class="day-month">{{j.month}}月</text>
         </view>
         <view class="timeline-bill">
-          <view class="bill-item">
-            <text class="bill-title">{{j.title}}</text>
-            <text class="bill-bonus">+{{j.bouns}}</text>
+          <view class="bill-item" wx:for="{{j.list}}" wx:key="index" wx:for-item="k">
+            <view class="bill-content">
+              <text class="bill-hash">{{k.user_hash}}</text>
+              <text class="bill-title">{{k.comment}}</text>
+            </view>
+            <text class="bill-bonus">+{{k.bonus}}</text>
           </view>
         </view>
       </view>

@@ -1,8 +1,5 @@
 {
-  "usingComponents": {
-      "i-input": "../../dist/input/index",
-      "i-panel": "../../dist/panel/index"
-  },
+  "usingComponents": {},
   "navigationBarTitleText": "历程",
   "navigationBarBackgroundColor": "#00c481",
   "navigationBarTextStyle": "white"

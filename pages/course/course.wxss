@@ -97,10 +97,10 @@ page {
   background: #f1f1f1;
   border-radius: 20rpx;
   margin-bottom: 20rpx;
-  padding: 40rpx 30rpx;
+  padding: 20rpx 30rpx;
 }
 
-.bill-item .bill-title {
+.bill-item .bill-content {
   flex: 1;
   font-size: 28rpx;
   font-family: Source Han Sans CN Medium, Source Han Sans CN Medium-Medium;
@@ -110,6 +110,12 @@ page {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.bill-content .bill-hash {
+  display: block;
+  font-size: 22rpx;
+  color: #999999;
 }
 
 .bill-item .bill-bonus {
