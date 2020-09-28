@@ -16,9 +16,8 @@
 	<view class="mine-course-list" wx:if="{{courseList}}">
 		<mp-cell ext-class="as-title" value="最近历程" link footer="更多" url="/pages/course/course"></mp-cell>
 		<view class="badge-list">
-			<i-tag i-class="i-tags" name="单个标签" color="green" wx:for="{{courseList}}" wx:key="index" wx:if="title">
-				{{item.title}}
-			</i-tag>
+			<mp-badge ext-class="i-tags" name="单个标签" color="green" wx:for="{{courseList}}" wx:key="index" wx:if="title"
+				content="{{item.title}}" />
 		</view>
 	</view>
 	<view class="shop-list">
