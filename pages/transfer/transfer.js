@@ -11,7 +11,6 @@ Page({
     disabled: false
   },
   onLoad(option) {
-    console.log('transfer', option);
     this.setData({
       toUserName: option.name,
       toUserAvatar: option.avatar,
