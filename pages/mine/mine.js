@@ -15,13 +15,16 @@ Page({
     });
     this.initData(globalData.openid);
   },
-  onShow(){
+  onShow() {
     this.onLoad();
   },
   //初始化数据
   initData(id) {
-    this.getUserInfo(id);
-    this.getCourseList(id);
+    if (id) {
+      this.getUserInfo(id);
+      this.getCourseList(id);
+    }
+
     this.getShopList();
   },
   // 获取用户信息

@@ -44,14 +44,22 @@ Page({
 
   // 校验表单
   checkForm() {
-    if (this.data.form) {
-      console.log(this.data.form);
+    let form = this.data.form;
+    if (!form.title || !form.bonus) {
+      wx.showToast({
+        title: '请输入正确内容',
+        icon: 'none'
+      })
+      return false;
+    } else {
+      return true;
     }
-    return;
+
   },
-  // 点击发布
+  // 点击发布！
   publish(e) {
-    this.checkForm();
+    if (!this.checkForm()) return;
+
     this.setData({
       [`form.uuid`]: app.globalData.openid
     })
