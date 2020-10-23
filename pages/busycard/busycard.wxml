@@ -1,0 +1,33 @@
+<!--pages/busycard/busycard.wxml-->
+<view class="container busycard">
+  <image class="background" src="/images/bus-bg.png" style="height:100%;"></image>
+  <view class="card-box">
+    <image class="background" src="/images/card-bg.png" mode="aspectFit" style="height:365rpx;"></image>
+    <view class="card-content">
+      <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+      <text class="company">深圳法本信息有限公司</text>
+      <view class="detail-box">
+        <view class="box-base">
+          <text class="name">杨国栋</text>
+          <text class="credit">jsbdksjnksdnf</text>
+          <text class="department">开发一部</text>
+          <text class="position">UI设计师</text>
+        </view>
+        <view class="box-contact">
+          <view class="cell-box">
+            <image src="/images/icon-phone.png"></image>
+            <text>13333333</text>
+          </view>
+          <view class="cell-box">
+            <image src="/images/icon-address.png"></image>
+            <text>285979930@qq.com</text>
+          </view>
+          <view class="cell-box">
+            <image src="/images/icon-email.png"></image>
+            <text>上海市浦东新区银东路</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

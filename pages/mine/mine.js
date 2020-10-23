@@ -29,7 +29,6 @@ Page({
   },
   // 获取用户信息
   getUserInfo(id) {
-
     this.getWallet(id);
   },
   // 获取历程列表
@@ -43,7 +42,12 @@ Page({
       shopList: shopList
     })
   },
-
+  //前往个人信息
+  getProfile() {
+    wx.navigateTo({
+      url: '/pages/busycard/busycard',
+    })
+  },
   //------------- request
 
   // 获取个人钱包数据

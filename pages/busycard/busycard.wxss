@@ -1,0 +1,142 @@
+/* pages/busycard/busycard.wxss */
+page {
+  height: 100%;
+}
+
+.busycard {
+  position: relative;
+}
+
+.busycard image {
+  display: block;
+}
+
+.background {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.card-box {
+  height: 360rpx;
+  position: relative;
+  z-index: 2;
+  top: 130rpx;
+  width: 690rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.avatar {
+  width: 144rpx;
+  height: 144rpx;
+  border: 8rpx solid;
+  border-radius: 50%;
+  border-color: #1d81df #1d81df #52b8ff #52b8ff;
+  position: absolute;
+  top: -80rpx;
+  left: 44rpx;
+  z-index: 3;
+}
+
+.box-contact image {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.card-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  padding: 24rpx 36rpx;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.company {
+  font-size: 24rpx;
+  font-family: Source Han Sans CN Regular, Source Han Sans CN Regular-Regular;
+  font-weight: 400;
+  line-height: 1;
+  text-align: right;
+  display: block;
+}
+
+.detail-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 72rpx;
+}
+
+.box-base {
+  width: 190rpx;
+  text-align: center;
+}
+
+.box-base>text {
+  line-height: 1;
+  font-size: 24rpx;
+  font-family: Source Han Sans CN Regular, Source Han Sans CN Regular-Regular;
+  font-weight: 400;
+  display: block;
+  text-align: center;
+}
+
+.box-base .name {
+  font-size: 36rpx;
+  font-family: Source Han Sans CN Medium, Source Han Sans CN Medium-Medium;
+  font-weight: 500;
+  margin-bottom: 12rpx;
+}
+
+.box-base .credit {
+  font-size: 24rpx;
+  font-family: Source Han Sans CN Light, Source Han Sans CN Light-Light;
+  font-weight: 300;
+  color: #fffeff;
+  margin-bottom: 30rpx;
+}
+
+.box-base .department {
+  margin-bottom: 26rpx;
+}
+
+.box-base .position {}
+
+.box-contact {
+  flex: 1;
+  color: #fffeff;
+}
+
+.box-contact .cell-box {
+  display: block;
+  padding-left: 100rpx;
+
+  margin-bottom: 30rpx;
+}
+
+.cell-box:last-child {
+  margin-bottom: 0;
+}
+
+.cell-box image,
+.cell-box text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.cell-box text {
+  font-size: 24rpx;
+  font-family: Source Han Sans CN Light, Source Han Sans CN Light-Light;
+  font-weight: 300;
+  color: #fffeff;
+  text-indent: 24rpx;
+  line-height: 1;
+}

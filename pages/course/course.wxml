@@ -5,6 +5,9 @@
     <text class="head-two">见证一个个<text class="strong">里程碑</text></text>
   </view>
   <view class="course-timeline">
+    <view class="profile-block" bindtap="checkCard">
+      <image src="/images/profile.png"></image>
+    </view>
     <view class="timeline-year" wx:for="{{dateLine}}" wx:key="year" wx:for-item="item">
       <text class="hr-year">{{item.year}}年</text>
       <view class="timeline-month" wx:for="{{item.list}}" wx:key="index" wx:for-item="j">

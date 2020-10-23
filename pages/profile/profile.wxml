@@ -1,0 +1,96 @@
+<!--pages/profile/profile.wxml-->
+<view class="container black">
+  <view class="profile-header">
+    <dl>
+      <dt>
+        <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+      </dt>
+      <dd style="padding-top:27rpx;">
+        <text class="text-name">杨国栋</text>
+      </dd>
+    </dl>
+  </view>
+  <view class="profile-detail">
+    <text class="p-d-title">个人简历</text>
+    <view class="p-d-box">
+      <view class="box-head">
+        <image class='background' src="/images/profile-bar.png" mode="aspectFill"></image>
+        <text class="head-text">关于自己</text>
+      </view>
+      <view class="box-body">
+        <div class="box-text">
+          <div class="text-line">
+            <span class="text-green">姓名：</span>杨国栋
+          </div>
+          <div class="text-line">
+            <span class="text-green">性别：</span>男
+          </div>
+          <div class="text-line">
+            <span class="text-green">电话：</span>1333333333
+          </div>
+          <div class="text-line">
+            <span class="text-green">学历：</span>本科
+          </div>
+        </div>
+        <div class="hr-line"></div>
+        <div class="box-text">
+          <div class="text-line">
+            <span class="text-green">出生：</span>2020.08.01
+          </div>
+          <div class="text-line">
+            <span class="text-green">籍贯：</span>安徽
+          </div>
+          <div class="text-line">
+            <span class="text-green">QQ：</span>1333333333
+          </div>
+          <div class="text-line">
+            <span class="text-green">现居住城市：</span>上海
+          </div>
+        </div>
+      </view>
+    </view>
+    <view class="p-d-box">
+      <view class="box-head">
+        <image class='background' src="/images/profile-bar.png" mode="aspectFill"></image>
+        <text class="head-text">个人历程</text>
+      </view>
+      <view class="box-body">
+        <div class="box-text">
+          <view class="course-box">
+            <text class="date">2020-09-10</text>
+            <text class="credit">aisndiuasjd</text>
+            <text class="remark">司机覅欧式的飞机我</text>
+          </view>
+          <view class="course-box">
+            <text class="date">2020-09-10</text>
+            <text class="credit">aisndiuasjd</text>
+            <text class="remark">司机覅欧式的飞机我</text>
+          </view>
+          <view class="course-box">
+            <text class="date">2020-09-10</text>
+            <text class="credit">aisndiuasjd</text>
+            <text class="remark">司机覅欧式的飞机我</text>
+          </view>
+        </div>
+        <div class="hr-line"></div>
+        <div class="box-text">
+          <view class="course-box">
+            <text class="date">2020-09-10</text>
+            <text class="credit">aisndiuasjd</text>
+            <text class="remark">司机覅欧式的飞机我</text>
+          </view>
+          <view class="course-box">
+            <text class="date">2020-09-10</text>
+            <text class="credit">aisndiuasjd</text>
+            <text class="remark">司机覅欧式的飞机我</text>
+          </view>
+          <view class="course-box">
+            <text class="date">2020-09-10</text>
+            <text class="credit">aisndiuasjd</text>
+            <text class="remark">司机覅欧式的飞机我</text>
+          </view>
+        </div>
+      </view>
+    </view>
+  </view>
+</view>

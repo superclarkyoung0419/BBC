@@ -6,7 +6,9 @@
         "pages/mine/mine",
         "pages/getcoins/getcoins",
         "pages/course/course",
-        "pages/transfer/transfer"
+        "pages/transfer/transfer",
+        "pages/profile/profile",
+        "pages/busycard/busycard"
     ],
     "window": {
         "backgroundTextStyle": "light",

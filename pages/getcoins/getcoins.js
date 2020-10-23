@@ -13,8 +13,8 @@ Page({
   onLoad: function (options) {
     let userInfo = app.globalData.userInfo,
       uuid = app.globalData.openid;
-    console.log('userInfo', userInfo);
-    console.log('uuid', uuid);
+    // console.log('userInfo', userInfo);
+    // console.log('uuid', uuid);
 
     if (!userInfo || !uuid) {
       wx.showToast({

@@ -2,7 +2,7 @@
 <view class="container">
 	<view class="mine-head">
 		<view class="profile">
-			<image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+			<image class="avatar" src="{{userInfo.avatarUrl}}" bindtap="getProfile"></image>
 			<view class="info">
 				<text class="user-name">{{userInfo.nickName}}</text>
 				<text class="user-department" wx:if="!!userInfo.user_hash">{{userInfo.user_hash}}</text>
