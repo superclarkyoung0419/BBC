@@ -26,7 +26,7 @@ class Db_Ctl(Singleton):
                 wx_name     text,
                 wx_image    text);''')
             self.c.execute('''create table if not exists tasks 
-                (task_id integer primary key autoincrement, title text not null, uuid text not null, bonus integer nut null, description text, str_time text not null);''')
+                (task_id integer primary key autoincrement, title text not null, uuid text not null, user_hash text not null, bonus integer nut null, description text, str_time text not null);''')
             self.conn.commit()
             print("create table transaction_log, user_info, tasks")
         except Exception as e:
@@ -58,7 +58,8 @@ class Db_Ctl(Singleton):
         return ret
 
     def insert_user_info(self, user_name, user_hash, wx_name, wx_image):
-        sql_op = "insert into user_info(user_name, user_hash, wx_name, wx_image) values(\'%s\' , \'%s\', \'%s\' , \'%s\')" % (user_name, user_hash, wx_name, wx_image)
+        sql_op = "insert into user_info(user_name, user_hash, wx_name, wx_image) values(\'%s\' , \'%s\', \'%s\' , \'%s\')" % (
+            user_name, user_hash, wx_name, wx_image)
         print("select user exe: %s" % (sql_op))
         try:
             self.c.execute(sql_op)
@@ -109,6 +110,7 @@ class Db_Ctl(Singleton):
         first_res = cursor.fetchone()
         print("res fetchone: %s" % (str(first_res)))
         if str(first_res) == "None":
+            print("wx_name  is null")
             return ""
         json_res = {}
         wxname = first_res[0]
@@ -121,8 +123,9 @@ class Db_Ctl(Singleton):
         return json.dumps(json_res)
 
     def insert_task(self, title, uuid, bonus, description, str_time):
-        sql_op = "insert into tasks(task_id, title, uuid, bonus, description, str_time) values(null, \'%s\', \'%s\', %d, \'%s\', \'%s\')" % (
-            title, uuid, bonus, description, str_time)
+        user_hash = self.select_user_hash(uuid)
+        sql_op = "insert into tasks(task_id, title, uuid, user_hash, bonus, description, str_time) values(null, \'%s\', \'%s\', \'%s\', \'%s\', \'%s\', \'%s\')" % (
+            title, uuid, user_hash, bonus, description, str_time)
         print("insert task %s" % (sql_op))
         try:
             self.c.execute(sql_op)
@@ -132,14 +135,20 @@ class Db_Ctl(Singleton):
             self.conn.rollback()
 
     def select_task_remain(self):
-        sql_op = "select task_id, title, uuid, bonus, description from tasks"
+        sql_op = "select task_id, title, uuid, user_hash, bonus, description from tasks"
         print("select_task_remain :%s" % (sql_op))
         cursor = self.c.execute(sql_op)
+        res_cursor = cursor.fetchall()
         ret = []
-        for row in cursor:
-            json_task = {"id": row[0], "title": row[1],
-                         "uuid": row[2], "bonus": row[3], "description": row[4]}
+        for row in res_cursor:
+            uuid = row[2]
+            json_user_info = self.select_user_info(uuid)
+            if json_user_info == "":
+                continue
+            json_task = {"task_id": row[0], "title": row[1], "uuid": row[2], "user_hash": row[3], "bonus": row[4], 
+                        "description": row[5], "wx_name":json.loads(json_user_info)["wx_name"], "wx_image":json.loads(json_user_info)["wx_image"]}
             ret.append(json_task)
+            print("select task remain append %s" %(str(json_task)))
         return ret
 
     def complete_task(self, task_id):
@@ -151,6 +160,8 @@ class Db_Ctl(Singleton):
         except Exception as e:
             print("Exception: %s" % (e))
             self.conn.rollback()
+            err = Exception("task complete error")
+            raise err
 
     def get_task(self, task_id):
         sql_op = "select task_id, title, uuid, bonus, description from tasks where task_id = %d" % (
@@ -159,6 +170,4 @@ class Db_Ctl(Singleton):
         cursor = self.c.execute(sql_op)
         first_res = cursor.fetchone()
         print("res fetchone: %s" % (str(first_res)))
-        if str(first_res) == "None":
-            return ""
         return first_res
