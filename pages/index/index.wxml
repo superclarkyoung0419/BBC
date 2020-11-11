@@ -1,5 +1,13 @@
 <!-- index.wxml -->
 <view class="container">
+  <mp-halfScreenDialog show="{{show}}" maskClosable="{{false}}">
+    <view class="login-title" slot="title">bbc申请</view>
+    <view class="login-desc" slot="desc">获取你的昵称、头像、地区和性别</view>
+    <view class="login-btns" slot="footer">
+      <button class="cancle-btn" bindtap="cancellogin">取消</button>
+      <button class="login-btn" open-type="getUserInfo" bindgetuserinfo="_login">登录</button>
+    </view>
+  </mp-halfScreenDialog>
   <!-- <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>

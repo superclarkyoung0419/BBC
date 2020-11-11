@@ -1,0 +1,189 @@
+/* pages/profile/profile.wxss */
+
+page {
+  overflow: auto;
+}
+
+.container.black {
+  background-color: #141414;
+  padding: 0 85rpx;
+}
+
+.profile-header {}
+
+.profile-header dl {
+  display: block;
+  padding-top: 20rpx;
+  text-align: center;
+  padding-bottom: 27rpx;
+  border-bottom: 2rpx solid #8e8e8e;
+}
+
+dl dt {
+  display: inline-block;
+  width: 142rpx;
+  height: 142rpx;
+  background-color: #00c481;
+  border-radius: 50%;
+}
+
+dt image {
+  display: block;
+  border-radius: 50%;
+  width: 112rpx;
+  height: 112rpx;
+  margin: 15rpx;
+}
+
+dl dd {
+  display: block;
+  line-height: 1;
+}
+
+dd .text-name {
+  font-size: 40rpx;
+  font-family: Source Han Sans CN Light, Source Han Sans CN Light-Light;
+  font-weight: 300;
+
+  color: #8e8e8e;
+}
+
+
+.profile-detail {
+  position: relative;
+  padding: 110rpx 0 50rpx;
+}
+
+.profile-detail .p-d-title {
+  font-size: 40rpx;
+  font-family: Source Han Sans CN Medium, Source Han Sans CN Medium-Medium;
+  font-weight: 500;
+  color: #ffffff;
+  position: absolute;
+  top: -5rpx;
+  left: 50%;
+  width: 185rpx;
+  transform: translateX(-50%);
+  background-color: #141414;
+  text-align: center;
+}
+
+.p-d-box {
+  padding-top: 15rpx;
+}
+
+.box-head {
+  position: relative;
+  height: 43rpx;
+  background: #212121;
+  border-radius: 22rpx;
+}
+
+.box-head .background {
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+}
+
+.box-head .head-text {
+  position: absolute;
+  text-align: center;
+  font-size: 30rpx;
+  font-family: Source Han Sans CN Bold, Source Han Sans CN Bold-Bold;
+  font-weight: 700;
+  width: 100%;
+  height: 43rpx;
+  line-height: 43rpx;
+  left: 0;
+  top: 0;
+}
+
+.box-body {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding: 50rpx 5rpx;
+}
+
+.box-text {
+  flex: 1;
+}
+
+.box-text:last-child {
+  padding-left: 35rpx;
+}
+
+.hr-line {
+  width: 2rpx;
+  background-color: #757575;
+  position: relative;
+}
+
+.hr-line::before {
+  display: block;
+  content: '';
+  width: 15rpx;
+  height: 15rpx;
+  border: 1rpx solid #737373;
+  border-radius: 50%;
+  position: absolute;
+  top: -16rpx;
+  left: -8rpx;
+}
+
+.hr-line::after {
+  display: block;
+  content: '';
+  width: 8rpx;
+  height: 8rpx;
+  background-color: #757575;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -8rpx;
+  left: -2rpx;
+}
+
+.text-line {
+  display: block;
+  color: #8e8e8e;
+  font-size: 28rpx;
+  line-height: 1;
+  padding: 14rpx 0;
+}
+
+.text-green {
+  color: #00c481;
+}
+
+.course-box {
+  font-size: 28rpx;
+  font-family: Source Han Sans CN Regular, Source Han Sans CN Regular-Regular;
+  font-weight: 400;
+}
+
+.course-box text {
+  display: block;
+  line-height: 1;
+}
+
+.course-box .date {
+  color: #00c481;
+  padding-top: 10rpx;
+}
+
+.course-box .credit {
+  font-size: 24rpx;
+  font-family: Source Han Sans CN Light, Source Han Sans CN Light-Light;
+  font-weight: 300;
+  color: #fffeff;
+  padding-top: 20rpx;
+}
+
+.course-box .remark {
+  color: #8e8e8e;
+  padding-top: 30rpx;
+  padding-bottom: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

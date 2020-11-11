@@ -1,6 +1,7 @@
 {
     "usingComponents": {
-        "mp-slideview": "weui-miniprogram/slideview/slideview"
+        "mp-slideview": "weui-miniprogram/slideview/slideview",
+        "mp-halfScreenDialog": "weui-miniprogram/half-screen-dialog/half-screen-dialog"
     },
     "navigationBarTitleText": "首页",
     "navigationBarBackgroundColor": "#00c481",

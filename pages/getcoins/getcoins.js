@@ -13,6 +13,23 @@ Page({
   onLoad: function (options) {
     let userInfo = app.globalData.userInfo,
       uuid = app.globalData.openid;
+    // console.log('userInfo', userInfo);
+    // console.log('uuid', uuid);
+
+    if (!userInfo || !uuid) {
+      wx.showToast({
+        title: '请前往首页登录',
+        icon: 'none',
+        success: () => {
+          setTimeout(() => {
+            wx.switchTab({
+              url: '/pages/index/index',
+            })
+          }, 2000)
+        }
+      })
+      return;
+    }
     qrcode = new QRCode('canvas', {
       // usingIn: this,         //限制了长度，省略了前面路径部分
       text: "name=" + userInfo.nickName + '&avatar=' + userInfo.avatarUrl + '&uuid=' + uuid,

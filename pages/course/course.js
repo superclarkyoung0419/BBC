@@ -78,7 +78,12 @@ Page({
     newDateArr.sort((na, nb) => nb.year - na.year);
     return newDateArr;
   },
-
+  //查看名片
+  checkCard() {
+    wx.navigateTo({
+      url: '/pages/profile/profile',
+    })
+  },
 
   // -------------------request
 

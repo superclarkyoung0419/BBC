@@ -2,7 +2,7 @@
 <view class="container">
 	<view class="mine-head">
 		<view class="profile">
-			<image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+			<image class="avatar" src="{{userInfo.avatarUrl}}" bindtap="getProfile"></image>
 			<view class="info">
 				<text class="user-name">{{userInfo.nickName}}</text>
 				<text class="user-department" wx:if="!!userInfo.user_hash">{{userInfo.user_hash}}</text>
@@ -13,11 +13,19 @@
 			<text class="bonus">{{userInfo.bonus}}</text>
 		</view>
 	</view>
-	<view class="mine-course-list" wx:if="{{courseList}}">
-		<mp-cell ext-class="as-title" value="最近历程" link footer="更多" url="/pages/course/course"></mp-cell>
-		<view class="badge-list">
-			<mp-badge ext-class="i-tags" name="单个标签" color="green" wx:for="{{courseList}}" wx:key="index" wx:if="title"
-				content="{{item.title}}" />
+	<view class="mine-course-list">
+		<view wx:if="{{courseList.length>0}}">
+			<mp-cell ext-class="as-title" value="最近历程" link footer="更多" url="/pages/course/course"></mp-cell>
+			<view class="badge-list">
+				<mp-badge ext-class="i-tags" name="单个标签" color="green" wx:for="{{courseList}}" wx:key="index" wx:if="title"
+					content="{{item.title}}" />
+			</view>
+		</view>
+		<view wx:else>
+			<mp-cell ext-class="as-title" value="最近历程"></mp-cell>
+			<view class="badge-list">
+				<text class="badge-list-tip">暂无历程数据</text>
+			</view>
 		</view>
 	</view>
 	<view class="shop-list">

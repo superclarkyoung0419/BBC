@@ -38,8 +38,26 @@ page {
   border-radius: 30rpx 30rpx 0rpx 0rpx;
   padding: 7rpx 60rpx;
   flex: 1;
+  position: relative;
 }
 
+.course-timeline .profile-block {
+  background-color: #ffdd0a;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  text-align: center;
+  position: absolute;
+  right: 55rpx;
+  top: -50rpx;
+}
+
+.profile-block image {
+  width: 32rpx;
+  height: 33rpx;
+  display: inline-block;
+  margin-top: 34rpx;
+}
 
 .timeline-year .hr-year {
   display: block;

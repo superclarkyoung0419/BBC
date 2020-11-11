@@ -9,7 +9,7 @@ const urlList = {
   complete: '/complete_task', //完成任务
   tasks: '/search_log', //任务列表
 };
-const resultMap = ['成功', 'login fail', 'fund insufficient', 'user not found', 'task publish failed', 'task complete failed']
+const resultMap = ['成功', 'login fail', 'fund insufficient', 'user not found', 'publish failed', 'complete failed']
 
 // 封装request请求
 const request = options => {
